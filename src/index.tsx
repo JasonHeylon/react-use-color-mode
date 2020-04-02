@@ -1,23 +1,23 @@
-import * as React from 'react';
+import { useState, useEffect } from "react";
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState<{
-    counter: number;
-  }>({
-    counter: 0
-  });
+import { getColorMode, getMatchMedia, getBindingEvents } from "./utils";
+import { colors } from "./teyps";
 
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++;
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval);
-    };
+export const useColorMode = () => {
+  const [colorMode, setColorMode] = useState<colors>(
+    getColorMode(getMatchMedia())
+  );
+
+  const handleChange = () => setColorMode(getColorMode(getMatchMedia()));
+  useEffect(() => {
+    const { bindEvent, unbindEvent } = getBindingEvents(
+      getMatchMedia(),
+      handleChange
+    );
+    bindEvent();
+
+    return unbindEvent;
   }, []);
 
-  return counter;
+  return [colorMode];
 };

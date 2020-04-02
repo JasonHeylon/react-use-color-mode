@@ -1,29 +1,36 @@
-import { useMyHook } from './'
+import { useColorMode } from "./";
 import { renderHook, act } from "@testing-library/react-hooks";
 
-// mock timer using jest
-jest.useFakeTimers();
+describe("useMyHook", () => {
+  let event: null | Function = null;
+  beforeAll(() => {
+    let isDarkMode = true;
 
-describe('useMyHook', () => {
-  it('updates every second', () => {
-    const { result } = renderHook(() => useMyHook());
+    Object.defineProperty(window, "matchMedia", {
+      value: jest.fn(() => {
+        return {
+          matches: isDarkMode,
+          addEventListener(_: string, handler: () => void) {
+            isDarkMode = !isDarkMode;
+            event = handler;
+          },
+          removeEventListener(_: string) {
+            event = null;
+          }
+        };
+      })
+    });
+  });
 
-    expect(result.current).toBe(0);
+  it("should get correct colorMode when fire change event", () => {
+    const { result } = renderHook(() => useColorMode());
 
-    // Fast-forward 1sec
+    expect(result.current[0]).toEqual("dark");
+
     act(() => {
-      jest.advanceTimersByTime(1000);
+      event && event();
     });
 
-    // Check after total 1 sec
-    expect(result.current).toBe(1);
-
-    // Fast-forward 1 more sec
-    act(() => {
-      jest.advanceTimersByTime(1000);
-    });
-
-    // Check after total 2 sec
-    expect(result.current).toBe(2);
-  })
-})
+    expect(result.current[0]).toEqual("light");
+  });
+});
