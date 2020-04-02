@@ -15,13 +15,13 @@ npm install --save react-use-color-mode
 ```tsx
 import * as React from 'react'
 
-import { useMyHook } from 'react-use-color-mode'
+import { useColorMode } from "react-use-color-mode";
 
 const Example = () => {
-  const example = useMyHook()
+  const [colorMode] = useColorMode();
   return (
     <div>
-      {example}
+      <h2>Your color Mode is {colorMode}</h2>
     </div>
   )
 }
@@ -30,7 +30,3 @@ const Example = () => {
 ## License
 
 MIT © [JasonHeylon](https://github.com/JasonHeylon)
-
----
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).

@@ -21,7 +21,8 @@ const App = () => {
       <h2>Your color Mode is {colorMode}</h2>
 
       <strong>
-        Try to switch {colorMode === "dark" ? "light" : "dark"} mode
+        Try to switch {colorMode === "dark" ? "light" : "dark"} mode, and find{" "}
+        <a href="https://github.com/JasonHeylon/react-use-color-mode">me</a>
       </strong>
     </div>
   );
