@@ -1,12 +1,13 @@
 {
   "name": "react-use-color-mode",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A react hook to detect dark or light mode of system",
   "author": "JasonHeylon",
   "license": "MIT",
   "repository": "JasonHeylon/react-use-color-mode",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "keywords": ["dark-mode", "react", "react-hooks", "dark", "night-mode"],
   "jsnext:main": "dist/index.es.js",
   "engines": {
     "node": ">=8",
