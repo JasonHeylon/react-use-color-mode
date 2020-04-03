@@ -8,6 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "keywords": ["dark-mode", "react", "react-hooks", "dark", "night-mode"],
+  "files": [
+    "/dist/**"
+  ],
   "jsnext:main": "dist/index.es.js",
   "engines": {
     "node": ">=8",
