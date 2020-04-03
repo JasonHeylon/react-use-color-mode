@@ -1,36 +1,36 @@
-import { useColorMode } from "./";
-import { renderHook, act } from "@testing-library/react-hooks";
+import { useColorMode } from './';
+import { renderHook, act } from '@testing-library/react-hooks';
 
-describe("useMyHook", () => {
+describe('useMyHook', () => {
   let event: null | Function = null;
   beforeAll(() => {
     let isDarkMode = true;
 
-    Object.defineProperty(window, "matchMedia", {
+    Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
         return {
           matches: isDarkMode,
-          addEventListener(_: string, handler: () => void) {
+          addEventListener(_: string, handler: () => void): void {
             isDarkMode = !isDarkMode;
             event = handler;
           },
-          removeEventListener(_: string) {
+          removeEventListener(): void {
             event = null;
-          }
+          },
         };
-      })
+      }),
     });
   });
 
-  it("should get correct colorMode when fire change event", () => {
+  it('should get correct colorMode when fire change event', () => {
     const { result } = renderHook(() => useColorMode());
 
-    expect(result.current[0]).toEqual("dark");
+    expect(result.current).toEqual('dark');
 
     act(() => {
       event && event();
     });
 
-    expect(result.current[0]).toEqual("light");
+    expect(result.current).toEqual('light');
   });
 });

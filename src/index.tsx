@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { getColorMode, getMatchMedia, getBindingEvents } from "./utils";
-import { colors } from "./teyps";
+import { getColorMode, getMatchMedia, getBindingEvents } from './utils';
+import { colors } from './teyps';
 
-export const useColorMode = () => {
+export const useColorMode = (): colors => {
   const [colorMode, setColorMode] = useState<colors>(
     getColorMode(getMatchMedia())
   );
 
-  const handleChange = () => setColorMode(getColorMode(getMatchMedia()));
+  const handleChange = (): void => setColorMode(getColorMode(getMatchMedia()));
   useEffect(() => {
     const { bindEvent, unbindEvent } = getBindingEvents(
       getMatchMedia(),
@@ -19,5 +19,5 @@ export const useColorMode = () => {
     return unbindEvent;
   }, []);
 
-  return [colorMode];
+  return colorMode;
 };

@@ -1,26 +1,30 @@
-import { MEDIA_QUERY, MODE_DARK, MODE_LIGHT } from "./constants";
+import { MEDIA_QUERY, MODE_DARK, MODE_LIGHT } from './constants';
+import { colors } from './teyps';
 
-export const getMatchMedia = () => {
+export const getMatchMedia = (): MediaQueryList => {
   return window.matchMedia && window.matchMedia(MEDIA_QUERY);
 };
 
-export const getColorMode = (matchQueryList: MediaQueryList | undefined) => {
+export const getColorMode = (
+  matchQueryList: MediaQueryList | undefined
+): colors => {
   return matchQueryList && matchQueryList.matches ? MODE_DARK : MODE_LIGHT;
 };
 
 export const getBindingEvents = (
   matchQueryList: MediaQueryList,
   handler: () => void
-) => {
+): { bindEvent: () => void; unbindEvent: () => void } => {
   if (matchQueryList.addEventListener) {
     return {
-      bindEvent: () => matchQueryList.addEventListener("change", handler),
-      unbindEvent: () => matchQueryList.removeEventListener("change", handler)
+      bindEvent: (): void => matchQueryList.addEventListener('change', handler),
+      unbindEvent: (): void =>
+        matchQueryList.removeEventListener('change', handler),
     };
   }
 
   return {
-    bindEvent: () => matchQueryList.addListener(handler),
-    unbindEvent: () => matchQueryList.removeListener(handler)
+    bindEvent: (): void => matchQueryList.addListener(handler),
+    unbindEvent: (): void => matchQueryList.removeListener(handler),
   };
 };

@@ -13,18 +13,18 @@ npm install --save react-use-color-mode
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import * as React from 'react';
 
-import { useColorMode } from "react-use-color-mode";
+import { useColorMode } from 'react-use-color-mode';
 
 const Example = () => {
-  const [colorMode] = useColorMode();
+  const colorMode = useColorMode();
   return (
     <div>
       <h2>Your color Mode is {colorMode}</h2>
     </div>
-  )
-}
+  );
+};
 ```
 
 ## License
