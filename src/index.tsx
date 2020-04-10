@@ -8,7 +8,11 @@ export const useColorMode = (): colors => {
     getColorMode(getMatchMedia())
   );
 
-  const handleChange = (): void => setColorMode(getColorMode(getMatchMedia()));
+  const handleChange = (): void => {
+    window.requestAnimationFrame(() => {
+      setColorMode(getColorMode(getMatchMedia()));
+    });
+  };
   useEffect(() => {
     const { bindEvent, unbindEvent } = getBindingEvents(
       getMatchMedia(),

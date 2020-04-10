@@ -5,25 +5,28 @@ import { useColorMode } from 'react-use-color-mode';
 const App = () => {
   const colorMode = useColorMode();
 
-  const styles =
-    colorMode === 'dark'
-      ? {
-          backgroundPositionY: '75%',
-          color: 'rgb(231, 232, 235)',
-        }
-      : {
-          backgroundPositionY: '0',
-          color: 'black',
-        };
+  const colorModeEmoji = colorMode === 'dark' ? '🌑' : '🌕';
 
   return (
-    <div className='container' style={styles}>
-      <h2>Your color Mode is {colorMode}</h2>
+    <div className={`container ${colorMode}`}>
+      <h1>
+        <a href='https://github.com/JasonHeylon/react-use-color-mode'>
+          react-use-color-mode
+        </a>
+        <span>{colorModeEmoji}</span>
+      </h1>
+
+      <h2>Your system's mode is {colorMode}</h2>
 
       <strong>
-        Try to switch {colorMode === 'dark' ? 'light' : 'dark'} mode, and find{' '}
-        <a href='https://github.com/JasonHeylon/react-use-color-mode'>me</a>
+        Try to switch to {colorMode === 'dark' ? 'light' : 'dark'} mode of your
+        system
       </strong>
+
+      <footer>
+        by
+        <a href='https://github.com/JasonHeylon'> JasonHeylon</a>
+      </footer>
     </div>
   );
 };

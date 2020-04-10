@@ -1,4 +1,4 @@
-# react-use-color-mode
+# react-use-color-mode 🌗
 
 > A react hook to detect dark or light mode of system
 
