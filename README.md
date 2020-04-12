@@ -27,6 +27,8 @@ const Example = () => {
 };
 ```
 
+## [Demo](http://blog.jasonheylon.com/react-use-color-mode)
+
 ## License
 
 MIT © [JasonHeylon](https://github.com/JasonHeylon)
