@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-use-color-mode/static/css/main.b5a9d900.chunk.css",
+    "main.css": "/react-use-color-mode/static/css/main.a10bffc6.chunk.css",
     "main.js": "/react-use-color-mode/static/js/main.0f6959a8.chunk.js",
     "main.js.map": "/react-use-color-mode/static/js/main.0f6959a8.chunk.js.map",
     "runtime-main.js": "/react-use-color-mode/static/js/runtime-main.f34798b7.js",
@@ -8,15 +8,15 @@
     "static/js/2.9821578e.chunk.js": "/react-use-color-mode/static/js/2.9821578e.chunk.js",
     "static/js/2.9821578e.chunk.js.map": "/react-use-color-mode/static/js/2.9821578e.chunk.js.map",
     "index.html": "/react-use-color-mode/index.html",
-    "precache-manifest.ed361f0fe1a27b44a9fd186a7eccafcd.js": "/react-use-color-mode/precache-manifest.ed361f0fe1a27b44a9fd186a7eccafcd.js",
+    "precache-manifest.2dd3c134cc16a63ce58d98b64dc25c86.js": "/react-use-color-mode/precache-manifest.2dd3c134cc16a63ce58d98b64dc25c86.js",
     "service-worker.js": "/react-use-color-mode/service-worker.js",
-    "static/css/main.b5a9d900.chunk.css.map": "/react-use-color-mode/static/css/main.b5a9d900.chunk.css.map",
+    "static/css/main.a10bffc6.chunk.css.map": "/react-use-color-mode/static/css/main.a10bffc6.chunk.css.map",
     "static/js/2.9821578e.chunk.js.LICENSE.txt": "/react-use-color-mode/static/js/2.9821578e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f34798b7.js",
     "static/js/2.9821578e.chunk.js",
-    "static/css/main.b5a9d900.chunk.css",
+    "static/css/main.a10bffc6.chunk.css",
     "static/js/main.0f6959a8.chunk.js"
   ]
 }
